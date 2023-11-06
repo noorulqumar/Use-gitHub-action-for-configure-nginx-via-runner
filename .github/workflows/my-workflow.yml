@@ -21,11 +21,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            apt install docker.io
-            if command -v docker &>/dev/null; then
-              echo "Docker is installed."
-            else
-              echo "Docker is not installed."
-            fi
             docker rm -f $(docker ps -aq)
             docker run -d -p 80:80 nginx
