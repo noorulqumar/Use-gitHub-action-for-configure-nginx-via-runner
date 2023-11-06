@@ -27,7 +27,8 @@ jobs:
               sudo apt update -y
               sudo apt  install docker.io -y
               sudo usermod -aG docker $USER
-              systemctl docker restart 
+              newgrp docker
+              systemctl enable docker  
               sleep 10
             fi
             docker rm -f $(docker ps -aq)
