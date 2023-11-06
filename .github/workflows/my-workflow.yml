@@ -15,8 +15,8 @@ jobs:
       #   run: ssh ${{secrets.KEY}} noor@51.20.134.222
       - name: echo
         run: |
-          echo $GITHUB_JOB /
-          echo ($GITHUB_ACTOR_ID)
+          echo $GITHUB_JOB 
+          echo $GITHUB_ACTOR_ID
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.0
