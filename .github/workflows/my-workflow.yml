@@ -16,7 +16,7 @@ jobs:
       - name: echo
         run: |
           echo $GITHUB_JOB 
-          echo $GITHUB_ACTOR_ID
+          echo $GITHUB_RUN_NUMBER
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.0
