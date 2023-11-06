@@ -13,8 +13,16 @@ jobs:
       - name: install sshpass
         run: sudo apt-get install sshpass
 
-      - name: ssh to instance
-        run: ssh -i ${{ secrets.KEY}} noor@51.20.134.222
+      # - name: ssh to instance
+      #   run: ssh ${{secrets.KEY}} noor@51.20.134.222
+
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+
 
       - name: echo username
         run: echo $USER
