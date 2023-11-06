@@ -11,13 +11,6 @@ jobs:
     runs-on: self-hosted
     steps:
 
-      # - name: ssh to instance
-      #   run: ssh ${{secrets.KEY}} noor@51.20.134.222
-      - name: echo
-        run: |
-          echo $GITHUB_JOB 
-          echo $GITHUB_RUN_NUMBER
-
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.0
         with:
