@@ -14,7 +14,7 @@ jobs:
         run: sudo apt-get install sshpass
 
       - name: ssh to instance
-        run: sshpass -p "123" ssh noor@51.20.134.222
+        run: sshpass -p "123" ssh -t noor@51.20.134.222
 
       - name: echo username
         run: echo $USER
