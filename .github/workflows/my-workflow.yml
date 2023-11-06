@@ -23,6 +23,7 @@ jobs:
           script: |
             if command -v docker &>/dev/null; then
               echo "Docker is installed."
+              chmod +x script.sh && bash script.sh 
             else
               chmod +x script.sh && bash script.sh 
             fi
