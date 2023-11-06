@@ -20,12 +20,15 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          run: |
+          script: |
             if command -v docker &>/dev/null; then
               echo "Docker is installed."
-              chmod +x script.sh && bash script.sh 
             else
-              chmod +x script.sh && bash script.sh 
+              sudo apt update -y
+              sudo apt  install docker.io -y
+              sudo usermod -aG docker $USER
+              systemctl docker restart 
+              sleep 10
             fi
             docker rm -f $(docker ps -aq)
             docker run -d -p 80:80 nginx
