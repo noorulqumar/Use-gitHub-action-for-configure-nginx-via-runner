@@ -8,7 +8,7 @@ on:
 
 jobs:
   setup-nginx-via-runner:
-    runs-on: self-hosted
+    runs-on: docker-runner
     steps:
 
       - name: executing remote ssh commands using password
